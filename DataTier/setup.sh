@@ -31,7 +31,7 @@ EOF
 sleep 5
 
 # Check if replica set is initialized
-until echo "rs.status()" | mongosh --host Data-Mongo1:27017 | grep -q "stateStr\ :\ PRIMARY"; do
+until echo "rs.status()" | mongosh --host data-mongo1:27017 | grep -q "stateStr\ :\ PRIMARY"; do
     echo "Waiting for replica set to initialize..."
     sleep 5
 done

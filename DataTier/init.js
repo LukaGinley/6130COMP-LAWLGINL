@@ -1,4 +1,4 @@
-use RunnersDB;
+use RunnersDatabase;
 
 // Drop collections if already exists
 db.codes.drop();
