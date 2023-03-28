@@ -1,5 +1,6 @@
 use runners_crisps;
 
+// Drop collections if already exists
 db.codes.drop();
 db.users.drop();
 
@@ -15,10 +16,21 @@ function generate10DigitHexCode() {
 }
 
 const codes = [];
-const ensureRandomCodes = new Set();
-let footballs = 10;
 
-// Generate the vouchers
+// Generate unique random codes
+while (codes.length < 10) {
+    const code = generate10DigitHexCode();
+    if (!ensureRandomCodes.has(code)) {
+        ensureRandomCodes.add(code);
+        codes.push({ code: code });
+    }
+}
+
+// Insert the vouchers
 db.codes.insertMany(codes);
-db.codes.findOne({ 'code': '1234567890' })
-db.users.insertOne({})
+
+// Find a code with value '1234567890' (if exists)
+db.codes.findOne({ code: '1234567890' });
+
+// Insert a user with empty document
+db.users.insertOne({});

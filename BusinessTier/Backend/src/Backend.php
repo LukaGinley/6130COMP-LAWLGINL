@@ -17,7 +17,7 @@ try {
 $users = $client->runners_crisps->users;
 $codes = $client->runners_crisps->codes;
 
-// Check if the form has been submitted and if so, retrieve the code and player name
+// Check if the form has been submitted and if so, retrieve the code and best player name
 if (isset($_POST['submit'])) {
     $code = strtolower(sanitize($_POST['code']));
     $bestPlayer = sanitize($_POST['best_player']);

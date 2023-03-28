@@ -1,1 +1,23 @@
-6130COMP Assignment- Runners Crisp 
+Runners Euro Comp
+
+Welcome to the Runners Euro Comp application!
+
+Description
+
+This application allows users to enter their personal information and participate in the Runners Euro Comp competition.
+
+Installation
+
+To install the application, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running npm install.
+3. Start the application by running npm start.
+
+Usage
+
+To use the application, simply fill out the form with your name, email, address, 10 digit hex code, and the name of your favorite player. Then click the "Submit" button to enter the competition.
+
+Credits
+
+This application was created by Luka Ginley as a project for assignment (6130COMP).
