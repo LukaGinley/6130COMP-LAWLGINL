@@ -1,7 +1,8 @@
 <?php
+// Load the MongoDB PHP driver
 require 'vendor/autoload.php';
 
-// Setup database
+// Connect to the MongoDB replica set
 try { 
     $client = new MongoDB\Client(
         'mongodb://mongo1:27017,mongo2:27017,mongo3:27017/admin?replicaSet=rs0'
@@ -11,48 +12,53 @@ try {
 } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
 }
-    
+
+// Select the 'users' and 'codes' collections from the 'runners_crisps' database
 $users = $client->runners_crisps->users;
 $codes = $client->runners_crisps->codes;
 
-// Matches 10 digit hex code
-$CODE_REGEX = "/^[a-f0-9]{10}$/";
-
-// Check if the form has been submitted and if so, get the code and playername
+// Check if the form has been submitted and if so, retrieve the code and player name
 if (isset($_POST['submit'])) {
-    $code = strtolower(sanatize($_POST['code']));
-    $bestPlayer = sanatize($_POST['best_player']);
+    $code = strtolower(sanitize($_POST['code']));
+    $bestPlayer = sanitize($_POST['best_player']);
+    $name = sanitize($_POST['name']);
+    $email = sanitize($_POST['email']);
+    $address = sanitize($_POST['address']);
 
-    $name = sanatize($_POST['name']);
-    $email = sanatize($_POST['email']);
-    $address = sanatize($_POST['address']);
-
-    // Result can be NULL but we can just fallback to else
+    // Check if the code exists in the 'codes' collection and has not been used before
     $result = $codes->findOne(['code' => $code]);
-
-    // We check the code has not been used
     if ($result->used === FALSE) {
         if ($result->football === TRUE) {
-            // They won a football we should email them the code
+            // The code corresponds to a football prize, so send the user a voucher
             echo "VOUCHER";
         } else {
-            // They won a 10$ discount
+            // The code corresponds to a $10 discount prize
             echo "DISCOUNT";
         }
 
-        // Now we can store their data for analytics, though im pretty sure this violates GDPR since we haven't got a privacy policy
+        // Insert the user's data into the 'users' collection for analytics
         $users->insertOne([
             'name' => $name,
             'email' => $email,
             'address' => $address,
-            'playerName' => $bestPlayer
+            'best_player' => $bestPlayer
         ]);
 
     } else {
+        // The code has already been used
         echo "Code has already been used";
     }
 } else {
+    // The form has not been submitted
     echo "Invalid form";
+}
+
+// Sanitize the input data to prevent SQL injection attacks
+function sanitize($input) {
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars($input);
+    return $input;
 }
 
 ?>
