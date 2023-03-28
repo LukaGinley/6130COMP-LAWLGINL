@@ -64,7 +64,7 @@
 <div class="col-6 p-5">
     <h1>Runners Euro Comp</h1>
 </div>
-<form class="col-5" method="post" action="/form.php">
+<form class="col-5" method="post" action="backend.php">
     <div class="mb-3 row">
         <label for="name" class="col-form-label">Name</label>
         <div class="col-8">
@@ -132,4 +132,5 @@
 		<input type="submit" value="Submit">
 	</form>
 </body>
-</html> -->
+</html> 
+-->
