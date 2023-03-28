@@ -1,4 +1,4 @@
-use runners_crisps;
+use RunnersDB;
 
 // Drop collections if already exists
 db.codes.drop();

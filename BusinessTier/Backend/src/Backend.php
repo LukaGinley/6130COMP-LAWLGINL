@@ -14,8 +14,8 @@ try {
 }
 
 // Select the 'users' and 'codes' collections from the 'runners_crisps' database
-$users = $client->runners_crisps->users;
-$codes = $client->runners_crisps->codes;
+$users = $client->RunnersDB->users;
+$codes = $client->RunnersDB->codes;
 
 // Check if the form has been submitted and if so, retrieve the code and best player name
 if (isset($_POST['submit'])) {
@@ -60,5 +60,4 @@ function sanitize($input) {
     $input = htmlspecialchars($input);
     return $input;
 }
-
 ?>
