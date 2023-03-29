@@ -38,7 +38,7 @@ while (codes.length < 100) {
         let coupon = "10OFF";
         // If there are still footballs available and the randomly generated number is 0 (1 in 10 chance)
         // then set the coupon to "FREEBALL" and decrement the available number of footballs
-        if (footballs > 0 && Math.floor(Math.random() * 10) == 0) {
+        if (footballs > 0 && Math.floor(Math.random() * 100) == 0) {
             coupon = "FREEBALL";
             footballs--;
         }
