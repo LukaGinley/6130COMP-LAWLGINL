@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Runners Euro Comp</title>
 	<style>
+		/* Styling for the page */
 		body {
 			font-family: 'Open Sans', sans-serif;
 			background: url('https://wallpaperset.com/w/full/9/4/3/185419.jpg') no-repeat center center fixed;
@@ -62,7 +63,9 @@
 	</style>
 </head>
 <body>
+	<!-- Page header -->
 	<h1>Runners Euro Comp</h1>
+	<!-- Form for users to fill in their details -->
 	<form action="Backend.php" method="POST">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
