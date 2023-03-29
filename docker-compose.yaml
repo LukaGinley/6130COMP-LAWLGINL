@@ -23,7 +23,7 @@ services:
   front-loadbalancer:
     build: ./PresentationTier/LoadBalancer/
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
       - front-n1
       - front-n2
