@@ -35,25 +35,25 @@ services:
   back-n1:
     build: ./BusinessTier/Backend/
     ports:
-      - "85:84"
+      - "87:86"
     networks:
       - app-network
   back-n2:
     build: ./BusinessTier/Backend/
     ports:
-      - "86:84"
+      - "88:86"
     networks:
       - app-network
   back-n3:
     build: ./BusinessTier/Backend/
     ports:
-      - "88:84"
+      - "89:86"
     networks:
       - app-network
   back-loadbalancer:
     build: ./BusinessTier/LoadBalancer/
     ports:
-      - "84:84"
+      - "86:86"
     depends_on:
       - back-n1
       - back-n2
