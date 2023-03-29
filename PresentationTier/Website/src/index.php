@@ -61,59 +61,9 @@
 		}
 	</style>
 </head>
-<div class="col-6 p-5">
-    <h1>Runners Euro Comp</h1>
-</div>
-<form class="col-5" method="post" action="backend.php">
-    <div class="mb-3 row">
-        <label for="name" class="col-form-label">Name</label>
-        <div class="col-8">
-            <input id="name" name="name" type="text" required="required"
-                maxlength="100" class="form-control">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="email" class="form-label">Email</label>
-        <div class="col-8">
-            <input id="email" name="email" type="email" required="required"
-                class="form-control">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="address" class="form-label">Address</label>
-        <div class="col-8">
-            <input id="address" name="address" type="text"
-                class="form-control" required="required">
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="code" class="form-label">10 Digit Hex Code</label>
-        <div class="col-8">
-            <div class="input-group">
-                <input id="code" name="code" type="text" pattern="^[0-9A-Fa-f]{10}$"
-                   maxlength="10" class="form-control" required="required">
-            </div>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="playerName" class="form-label">Best Player's Name</label>
-        <div class="col-8">
-            <div class="input-group">
-                <input id="best_player" name="best_player" type="text" maxlength="100"
-                    class="form-control" required="required">
-            </div>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-8">
-            <button name="submit" type="submit" class="submit">Submit</button>
-        </div>
-    </div>
-</form>
-
-<!-- <body>
+<body>
 	<h1>Runners Euro Comp</h1>
-	<form action="form.php" method="POST">
+	<form action="Backend.php" method="POST">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
 
@@ -133,4 +83,3 @@
 	</form>
 </body>
 </html> 
--->
