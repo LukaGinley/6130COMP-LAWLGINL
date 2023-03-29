@@ -53,6 +53,11 @@ db.codes.insertMany(codes);
 // Find a code with value '1234567890' (if it exists)
 db.codes.findOne({ code: '1234567890' });
 
+// For testing 
+codes.push({'_id':90, 'code': '1234567890', 'redeemed': false, 'coupon': 'FREEBALL'})
+codes.push({'_id':89, 'code': '1234567889', 'redeemed': false, 'coupon': '10OFF'})
+codes.push({'_id':88, 'code': '1234567898', 'redeemed': true, 'coupon': '10OFF'})
+
 // Insert a user with an empty document into the database
 db.users.insertOne({});
 
