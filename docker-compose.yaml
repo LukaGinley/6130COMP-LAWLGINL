@@ -54,6 +54,8 @@ services:
     build: ./BusinessTier/LoadBalancer/
     ports:
       - "84:84"
+    expose:
+      - "80"
     depends_on:
       - back-n1
       - back-n2
