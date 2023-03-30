@@ -11,6 +11,8 @@ Installation
 To install the application, follow these steps:
 
 1. Clone the repository to your local machine.
+git clone https://github.com/username/repository-name.git
+
 2. Install the required dependencies by running npm install.
 3. Start the application by running npm start.
 
