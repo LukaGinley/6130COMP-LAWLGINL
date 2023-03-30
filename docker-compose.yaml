@@ -32,34 +32,34 @@ services:
       - app-network
 
   # BusinessTier
-  back-n1:
+  backn1:
     build: ./BusinessTier/Backend/
     ports:
-      - "87:86"
+      - "85:80"
     networks:
       - app-network
-  back-n2:
+  backn2:
     build: ./BusinessTier/Backend/
     ports:
-      - "88:86"
+      - "86:80"
     networks:
       - app-network
-  back-n3:
+  backn3:
     build: ./BusinessTier/Backend/
     ports:
-      - "89:86"
+      - "88:80"
     networks:
       - app-network
   back-loadbalancer:
     build: ./BusinessTier/LoadBalancer/
     ports:
-      - "86:86"
+      - "84:84"
     expose:
       - "80"
     depends_on:
-      - back-n1
-      - back-n2
-      - back-n3
+      - backn1
+      - backn2
+      - backn3
     networks:
       - app-network
 
