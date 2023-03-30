@@ -11,14 +11,14 @@ Installation
 To install the application, follow these steps:
 
 1. Clone the repository to your local machine.
-git clone: https://github.com/username/repository-name.git
+git clone https://github.com/username/repository-name.git
 
 2. Install docker compose 
-docker install: sudo apt install docker-compose
+sudo apt install docker-compose
 
 
 3. Build docker compose 
-build containers: sudo docker-compose build
+sudo docker-compose build
 
 4. 
 sudo docker-compose up

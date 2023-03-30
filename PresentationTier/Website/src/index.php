@@ -66,7 +66,7 @@
 	<!-- Page header -->
 	<h1>Runners Euro Comp</h1>
 	<!-- Form for users to fill in their details -->
-	<form action="index.php" method="POST">
+	<form action="BusinessTier/Backend/src/index.php" method="POST">
 		<label for="name">Name:</label>
 		<input type="text" id="name" name="name" required>
 
