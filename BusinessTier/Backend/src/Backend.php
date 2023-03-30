@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 // Load the MongoDB PHP library
 require 'vendor/autoload.php';
@@ -75,4 +75,4 @@ if ($result != null && !$result['redeemed'])
     echo "Sorry, this code has already been used.";
     exit;
 }
-?> -->
+?>
