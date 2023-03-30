@@ -75,3 +75,4 @@ if ($result != null && !$result['redeemed'])
     echo "Sorry, this code has already been used.";
     exit;
 }
+?>
