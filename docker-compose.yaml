@@ -33,19 +33,19 @@ services:
 
   # BusinessTier
   back-n1:
-    build: ./BusinessTier/Backend/
+    build: ./BusinessTier/backend/
     ports:
       - "85:84"
     networks:
       - app-network
   back-n2:
-    build: ./BusinessTier/Backend/
+    build: ./BusinessTier/backend/
     ports:
       - "86:84"
     networks:
       - app-network
   back-n3:
-    build: ./BusinessTier/Backend/
+    build: ./BusinessTier/backend/
     ports:
       - "88:84"
     networks:
