@@ -17,7 +17,7 @@ git clone: https://github.com/username/repository-name.git
 docker install: sudo apt install docker-compose
 
 
-3. Build docker containers 
+3. Build docker compose 
 build containers: sudo docker-compose build
 
 4. 
