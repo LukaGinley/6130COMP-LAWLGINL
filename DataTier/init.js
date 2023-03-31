@@ -50,13 +50,13 @@ while (codes.length < 100) {
 // Insert the generated codes into the database
 db.codes.insertMany(codes);
 
-// Find a code with value '1234567890' (if it exists)
-db.codes.findOne({ code: '1234567890' });
+// Find a code with value '4e6d8f2a1b' for testing purposes 
+db.codes.findOne({ code: '4e6d8f2a1b' });
 
 // For testing 
-codes.push({'_id':90, 'code': '1234567890', 'coupon': 'FREEBALL', 'redeemed': false})
-codes.push({'_id':89, 'code': '1234567889', 'coupon': '10OFF', 'redeemed': false})
-codes.push({'_id':88, 'code': '1234567898', 'coupon': '10OFF', 'redeemed': true})
+codes.push({'_id':90, 'code': '4e6d8f2a1b', 'coupon': 'FREEBALL', 'redeemed': false})
+codes.push({'_id':89, 'code': 'c59b0e7d2f', 'coupon': '10OFF', 'redeemed': false})
+codes.push({'_id':88, 'code': 'a8f6b9c7d0', 'coupon': '10OFF', 'redeemed': true})
 
 // Insert a user with an empty document into the database
 db.users.insertOne({});
