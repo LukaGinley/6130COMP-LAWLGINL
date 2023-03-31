@@ -30,6 +30,13 @@ $bestplayer = $_POST['best_player']; // favorite player entered by the user
 // Look up the code entered by the user in the codes collection
 $result = $collection->findOne(array('code' => $code));
 
+// Check if the code has already been redeemed by another user
+if ($users->countDocuments(['code' => $code]) > 0) {
+    // If the code has already been redeemed, show an error message and stop the script
+    echo "Sorry, this code has already been used.";
+    exit;
+}
+
 /*
 If the code exists in the database and has not been redeemed, 
 show the user the coupon and store their information in the users collection.
@@ -50,13 +57,6 @@ if ($result != null && !$result['redeemed'])
         'code' => $code
     );
     
-    // Check if the code has already been redeemed by another user
-    if ($users->countDocuments(['code' => $code]) > 0) {
-        // If the code has already been redeemed, show an error message and stop the script
-        echo "Sorry, this code has already been used.";
-        exit;
-    }
-    
     // Insert the user's information into the users collection
     $users->insertOne($insertUser);
     
@@ -72,7 +72,7 @@ if ($result != null && !$result['redeemed'])
     }
 } else {
     // If code has already been redeemed, display an error message to the user and exit script
-    echo "Sorry, this code has already been used.";
+    echo "Sorry, this code is invalid or has already been used.";
     exit;
 }
 ?>

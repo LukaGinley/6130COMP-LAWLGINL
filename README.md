@@ -26,11 +26,13 @@ git clone https://github.com/username/repository-name.git
 2. Install docker compose via Ubuntu 
 sudo apt install docker-compose
 
-
 3. Build docker images for services defined in the Docker Compose file 
 sudo docker-compose build
 
-4. Launch services defined in the Docker Compose file
+4. Stop Apache
+sudo systemctl stop apache2
+
+5. Launch services defined in the Docker Compose file
 sudo docker-compose up -d
 
 To use the application, simply fill out the form with your name, email, address, 10 digit hex code, and the name of your favorite player. Then click the "Submit" button to enter the competition.
