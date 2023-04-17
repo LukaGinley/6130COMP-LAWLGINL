@@ -14,32 +14,32 @@ To ensure that the 10-digit code from the bag is not used more than once, I have
 
 I have also considered how the company will gain access to the data stored in the data tier for post-processing and how the application code will be deployed and managed. I have created a single command method of deployment for both platform and application code, which simplifies the deployment process for the company.
 
-Overall, I are confident that our proof of concept solution will meet the needs of Runners Crisps for their promotional activity, and look forward to their feedback on the solution I developed.
+Overall, I are confident that my proof of concept solution will meet the needs of Runners Crisps for their promotional activity, and look forward to their feedback.
 
 Installation
 
 To install the application, follow these steps:
 
 1. Clone the repository to your local machine
-git clone https://github.com/username/repository-name.git
+"git clone https://github.com/username/repository-name.git"
 
 2. Install docker compose via Ubuntu 
-sudo apt install docker-compose
+"sudo apt install docker-compose"
 
 3. Build docker images for services defined in the Docker Compose file 
-sudo docker-compose build
+"sudo docker-compose build"
 
 4. Stop Apache
-sudo systemctl stop apache2
+"sudo systemctl stop apache2"
 
 5. Launch services defined in the Docker Compose file
-sudo docker-compose up -d
+"sudo docker-compose up -d"
 
 To use the application, simply fill out the form with your name, email, address, 10 digit hex code, and the name of your favorite player. Then click the "Submit" button to enter the competition.
 
 Testing
 
-For testing purposes we have provided three scripts and injected them into the database, each will have different outcomes. 
+For testing purposes I have provided three test scripts and injected them into the database, each will have different outcomes. 
 
 1. Unredeemed Voucher Code (10%): 4e6d8f2a1b
 2. Redeemed Voucher Code (10%): a8f6b9c7d0
